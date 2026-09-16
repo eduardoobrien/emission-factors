@@ -89,7 +89,7 @@ uploaded_master = files.upload()
 master_file = list(uploaded_master.keys())[0]
 df_master = pd.read_excel(master_file)
 
-# CAMBIA 'nombre_columna_maestra' por el nombre correcto en tu tabla maestra
+# CAMBIA 'nombre_columna_maestra' - columna_maestra = "Nombre_cientifico"
 columna_m = "Nombre_cientifico"
 columna_maestra = 'nombre_columna_maestra' # Define the correct column name in the master table
 
@@ -116,10 +116,10 @@ if columna_maestra in df_master.columns:
 else:
     print(f"⚠️ La columna '{columna_maestra}' no se encontró en el archivo maestro.")
 
-# --- 5. DAP1 (DAP1): 5 a 200 ---
+# --- 5. DAP1 (DAP1): 10 a 200 ---
 columna_s = "DAP1"
 mask_s = df[columna_s].notna()
-registrar(df[mask_s & ~df[columna_s].between(5, 200)], 'DAP1 fuera de rango (10–200 cm)')
+registrar(df[mask_s & ~df[columna_s].between(10, 200)], 'DAP1 fuera de rango (10–200 cm)')
 registrar(df[~mask_s], 'DAP1 faltante')
 
 # --- 6. DAP2 (DAP2): 10 a 200 (solo valida si hay dato) ---
