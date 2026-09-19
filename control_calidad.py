@@ -1,6 +1,6 @@
 # ===============================================================
 # 🧠 CONTROL DE CALIDAD DE DATOS
-# Versión Google Colab
+# Versión Google Colab (2025)
 # Descripción: Este script automatiza la revisión de datos del INFFS
 # valores inválidos y consistencia taxonómica de datos forestales.
 # ===============================================================
@@ -89,9 +89,9 @@ uploaded_master = files.upload()
 master_file = list(uploaded_master.keys())[0]
 df_master = pd.read_excel(master_file)
 
-# CAMBIA 'nombre_columna_maestra' - columna_maestra = "Nombre_cientifico"
+# CAMBIA 'nombre_columna_maestra' por el nombre correcto en tu tabla maestra
 columna_m = "Nombre_cientifico"
-columna_maestra = 'nombre_columna_maestra' # Define the correct column name in the master table
+columna_maestra = "Nombre_cientifico" # Define the correct column name in the master table
 
 # Asegura que la columna exista en df_master antes de acceder a ella
 if columna_maestra in df_master.columns:
